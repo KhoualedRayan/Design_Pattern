@@ -18,7 +18,7 @@ public class Main {
         Epee epeeDuRoi = new Epee(5,"Excalibur",3.0,4);
         Epee epeeDuGuerrier = new Epee(4,"Rapière",1.5,3);
 
-        Personnage sorcier = new Sorcier(4,1,"Harry Potter",batonDeSorcier,6);
+        Sorcier sorcier = new Sorcier(4,1,"Harry Potter",batonDeSorcier,6);
         Roi roi = new Roi(6,1,"Arthur",epeeDuRoi,6,"Bretagne");
         Guerrier guerrier = new Guerrier(8,1,"Perceval",epeeDuGuerrier,3);
         Guerisseur guerisseur = new Guerisseur(3,1,"Merlin",baguetteMagique,7);

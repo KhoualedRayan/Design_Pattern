@@ -15,4 +15,12 @@ public class Epee extends Arme{
     public void setLongueur(int longueur) {
         this.longueur = longueur;
     }
+    public String toString() {
+        return "Epee{" +
+                "degat=" + getDegat() +
+                ", nom='" + getNom() + '\'' +
+                ", poids=" + getPoids() +
+                ", longueur=" + getLongueur() +
+                '}';
+    }
 }

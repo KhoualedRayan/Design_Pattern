@@ -35,12 +35,5 @@ public abstract class Arme {
         this.poids = poids;
     }
 
-    @Override
-    public String toString() {
-        return "Arme{" +
-                "degat=" + degat +
-                ", nom='" + nom + '\'' +
-                ", poids=" + poids +
-                '}';
-    }
+    public abstract String toString() ;
 }

@@ -49,13 +49,5 @@ public abstract class Personnage {
         this.arme = arme;
     }
 
-    @Override
-    public String toString() {
-        return "Personnage{" +
-                "pointsDeVie=" + pointsDeVie +
-                ", niveau=" + niveau +
-                ", nom='" + nom + '\'' +
-                ", arme=" + arme +
-                '}';
-    }
+    public abstract String toString();
 }

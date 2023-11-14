@@ -15,4 +15,12 @@ public class BatonDeSorcier extends Arme{
     public void setPouvoir(String pouvoir) {
         this.pouvoir = pouvoir;
     }
+    public String toString() {
+        return "BatonDeSorcier{" +
+                "degat=" + getDegat() +
+                ", nom='" + getNom() + '\'' +
+                ", poids=" + getPoids() +
+                ", pouvoir=" + getPouvoir() +
+                '}';
+    }
 }

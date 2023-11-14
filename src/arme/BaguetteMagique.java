@@ -15,4 +15,12 @@ public class BaguetteMagique extends Arme{
     public void setSoin(int soin) {
         this.soin = soin;
     }
+    public String toString() {
+        return "BaguetteMagique{" +
+                "degat=" + getDegat() +
+                ", nom='" + getNom() + '\'' +
+                ", poids=" + getPoids() +
+                ", soin=" + getSoin() +
+                '}';
+    }
 }
