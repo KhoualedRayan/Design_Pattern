@@ -1,6 +1,7 @@
 package personnage;
 
 import arme.Arme;
+import visiteur.VisiteurPers;
 
 public class Guerisseur extends Personnage{
     private int sagesse;
@@ -16,5 +17,19 @@ public class Guerisseur extends Personnage{
 
     public void setSagesse(int sagesse) {
         this.sagesse = sagesse;
+    }
+
+    @Override
+    public void accept(VisiteurPers vp) {
+        vp.visitGuerisseur(this);
+    }
+    public String toString() {
+        return "Guerisseur{" +
+                "pointsDeVie=" + getPointsDeVie() +
+                ", niveau=" + getNiveau() +
+                ", nom='" + getNom() + '\'' +
+                ", arme=" + getArme() +
+                ", sagesse='" + getSagesse() + '\'' +
+                '}';
     }
 }

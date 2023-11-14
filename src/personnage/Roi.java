@@ -1,6 +1,7 @@
 package personnage;
 
 import arme.Arme;
+import visiteur.VisiteurPers;
 
 public class Roi extends Personnage{
     private int force;
@@ -26,5 +27,21 @@ public class Roi extends Personnage{
 
     public void setRoyaume(String royaume) {
         this.royaume = royaume;
+    }
+
+    @Override
+    public void accept(VisiteurPers vp) {
+        vp.visitRoi(this);
+    }
+
+    public String toString() {
+        return "Roi{" +
+                "pointsDeVie=" + getPointsDeVie() +
+                ", niveau=" + getNiveau() +
+                ", nom='" + getNom() + '\'' +
+                ", arme=" + getArme() +
+                ", force='" + getForce() + ',' +
+                ", royaume='" + getRoyaume() + '\'' +
+                '}';
     }
 }

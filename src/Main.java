@@ -1,17 +1,37 @@
+import arme.Arme;
+import arme.BaguetteMagique;
+import arme.BatonDeSorcier;
+import arme.Epee;
+import personnage.*;
+import visiteur.DegatVisiteur;
+import visiteur.NiveauVisiteur;
+
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Entrée with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        DegatVisiteur degatVisiteur = new DegatVisiteur();
+        NiveauVisiteur niveauVisiteur = new NiveauVisiteur();
 
-        // Press Maj+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        BaguetteMagique baguetteMagique = new BaguetteMagique(3,"Baguette magique",2.0,5);
+        BatonDeSorcier batonDeSorcier = new BatonDeSorcier(5,"Baton de sorcier",2.0,"Feu");
+        Epee epeeDuRoi = new Epee(5,"Excalibur",3.0,4);
+        Epee epeeDuGuerrier = new Epee(4,"Rapière",1.5,3);
 
-            // Press Maj+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        Personnage sorcier = new Sorcier(4,1,"Harry Potter",batonDeSorcier,6);
+        Roi roi = new Roi(6,1,"Arthur",epeeDuRoi,6,"Bretagne");
+        Guerrier guerrier = new Guerrier(8,1,"Perceval",epeeDuGuerrier,3);
+        Guerisseur guerisseur = new Guerisseur(3,1,"Merlin",baguetteMagique,7);
+
+        System.out.println(sorcier.toString());
+        System.out.println(guerisseur.toString());
+        System.out.println(roi.toString());
+        System.out.println(guerrier.toString());
+
+        sorcier.accept(niveauVisiteur);
+        roi.accept(degatVisiteur);
+
+        System.out.println(roi.toString());
+        System.out.println(sorcier.toString());
     }
 }

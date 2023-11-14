@@ -20,7 +20,7 @@ public abstract class Personnage {
     public int getPointsDeVie() {
         return pointsDeVie;
     }
-
+    public abstract void accept(VisiteurPers vp);
     public void setPointsDeVie(int pointsDeVie) {
         this.pointsDeVie = pointsDeVie;
     }
@@ -49,4 +49,13 @@ public abstract class Personnage {
         this.arme = arme;
     }
 
+    @Override
+    public String toString() {
+        return "Personnage{" +
+                "pointsDeVie=" + pointsDeVie +
+                ", niveau=" + niveau +
+                ", nom='" + nom + '\'' +
+                ", arme=" + arme +
+                '}';
+    }
 }

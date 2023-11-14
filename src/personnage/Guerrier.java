@@ -1,6 +1,7 @@
 package personnage;
 
 import arme.Arme;
+import visiteur.VisiteurPers;
 
 public class Guerrier extends Personnage {
     private int force;
@@ -16,5 +17,19 @@ public class Guerrier extends Personnage {
 
     public void setForce(int force) {
         this.force = force;
+    }
+
+    @Override
+    public void accept(VisiteurPers vp) {
+        vp.visitGuerrier(this);
+    }
+    public String toString() {
+        return "Guerrier{" +
+                "pointsDeVie=" + getPointsDeVie() +
+                ", niveau=" + getNiveau() +
+                ", nom='" + getNom() + '\'' +
+                ", arme=" + getArme() +
+                ", force='" + getForce() + '\'' +
+                '}';
     }
 }
