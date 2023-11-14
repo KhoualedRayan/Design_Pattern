@@ -1,10 +1,12 @@
 package personnage;
 
+import arme.Arme;
+
 public class Sorcier extends Personnage{
     private int intelligence;
 
-    public Sorcier(int pointsDeVie, int niveau, String nom, int intelligence) {
-        super(pointsDeVie, niveau, nom);
+    public Sorcier(int pointsDeVie, int niveau, String nom, Arme arme, int intelligence) {
+        super(pointsDeVie, niveau, nom, arme);
         this.intelligence = intelligence;
     }
 

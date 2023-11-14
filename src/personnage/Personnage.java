@@ -1,15 +1,21 @@
 package personnage;
 
+import arme.Arme;
+import visiteur.VisiteurPers;
+
 public abstract class Personnage {
     private int pointsDeVie;
     private int niveau;
     private String nom;
+    private Arme arme;
 
-    public Personnage(int pointsDeVie, int niveau, String nom) {
+    public Personnage(int pointsDeVie, int niveau, String nom, Arme arme) {
         this.pointsDeVie = pointsDeVie;
         this.niveau = niveau;
         this.nom = nom;
+        this.arme = arme;
     }
+
 
     public int getPointsDeVie() {
         return pointsDeVie;
@@ -34,4 +40,13 @@ public abstract class Personnage {
     public void setNom(String nom) {
         this.nom = nom;
     }
+
+    public Arme getArme() {
+        return arme;
+    }
+
+    public void setArme(Arme arme) {
+        this.arme = arme;
+    }
+
 }

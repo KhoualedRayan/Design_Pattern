@@ -1,11 +1,13 @@
 package personnage;
 
+import arme.Arme;
+
 public class Roi extends Personnage{
     private int force;
     private String royaume;
 
-    public Roi(int pointsDeVie, int niveau, String nom, int force, String royaume) {
-        super(pointsDeVie, niveau, nom);
+    public Roi(int pointsDeVie, int niveau, String nom, Arme arme, int force, String royaume) {
+        super(pointsDeVie, niveau, nom, arme);
         this.force = force;
         this.royaume = royaume;
     }
