@@ -1,9 +1,10 @@
 package personnage;
 
 import arme.Arme;
+import equipe.Groupe;
 import visiteur.VisiteurPers;
 
-public abstract class Personnage {
+public abstract class Personnage  implements Groupe {
     private int pointsDeVie;
     private int niveau;
     private String nom;

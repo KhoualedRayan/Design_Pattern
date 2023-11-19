@@ -2,6 +2,8 @@ import arme.Arme;
 import arme.BaguetteMagique;
 import arme.BatonDeSorcier;
 import arme.Epee;
+import equipe.Equipe;
+import equipe.Groupe;
 import personnage.*;
 import visiteur.DegatVisiteur;
 import visiteur.NiveauVisiteur;
@@ -33,5 +35,13 @@ public class Main {
 
         System.out.println(roi.toString());
         System.out.println(sorcier.toString());
+
+        Equipe equipe1 = new Equipe();
+        equipe1.ajouterMembreEquipe(roi,guerisseur);
+        System.out.println("Equipe en bas : ");
+        System.out.println(equipe1.getGroupes().toString());
+        equipe1.accept(niveauVisiteur);
+        System.out.println(equipe1.getGroupes().toString());
+        System.out.println(equipe1);
     }
 }

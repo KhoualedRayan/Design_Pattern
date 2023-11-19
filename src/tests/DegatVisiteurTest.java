@@ -28,7 +28,7 @@ class DegatVisiteurTest {
     @Test
     void visitRoi() {
         roi.accept(degatVisiteur);
-        assert(roi.getArme().getDegat() == 11);
+        assert(roi.getArme().getDegat() == 11):"Bug sur le accept degatVisiteur";
     }
 
     @Test
