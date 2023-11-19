@@ -43,5 +43,6 @@ public class Main {
         equipe1.accept(niveauVisiteur);
         System.out.println(equipe1.getGroupes().toString());
         System.out.println(equipe1);
+
     }
 }
