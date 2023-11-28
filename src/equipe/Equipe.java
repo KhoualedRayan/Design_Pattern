@@ -1,5 +1,6 @@
 package equipe;
 
+import outils.Configuration;
 import visiteur.VisiteurPers;
 
 import java.util.ArrayList;
@@ -24,7 +25,12 @@ public class Equipe implements Groupe{
     }
 
     public void ajouterMembreEquipe(Groupe... groupe){
-        this.groupes.addAll(Arrays.asList(groupe));
+        for (Groupe g : groupe){
+            if(this.groupes.size()< Configuration.getInstance().getTailleMaxEquipe())
+                this.groupes.add(g);
+            else
+                System.out.println("Taille max de l'equipe atteinte");
+        }
     }
     public void supprimerMembreEquipe(Groupe... groupe){
         this.groupes.removeAll(Arrays.asList(groupe));

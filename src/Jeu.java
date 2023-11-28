@@ -1,16 +1,14 @@
-import arme.Arme;
 import arme.BaguetteMagique;
 import arme.BatonDeSorcier;
 import arme.Epee;
 import equipe.Equipe;
-import equipe.Groupe;
 import personnage.*;
 import visiteur.DegatVisiteur;
 import visiteur.NiveauVisiteur;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
-public class Main {
+public class Jeu {
     public static void main(String[] args) {
         DegatVisiteur degatVisiteur = new DegatVisiteur();
         NiveauVisiteur niveauVisiteur = new NiveauVisiteur();
