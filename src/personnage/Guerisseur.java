@@ -11,6 +11,9 @@ public class Guerisseur extends Personnage{
         this.sagesse = sagesse;
     }
 
+    public Guerisseur() {
+    }
+
     public int getSagesse() {
         return sagesse;
     }
@@ -18,6 +21,8 @@ public class Guerisseur extends Personnage{
     public void setSagesse(int sagesse) {
         this.sagesse = sagesse;
     }
+
+
 
     @Override
     public void accept(VisiteurPers vp) {

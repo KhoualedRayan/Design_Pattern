@@ -10,6 +10,9 @@ public class Guerrier extends Personnage {
         super(pointsDeVie, niveau, nom, arme);
         this.force = force;
     }
+    public Guerrier(){
+
+    }
 
     public int getForce() {
         return force;

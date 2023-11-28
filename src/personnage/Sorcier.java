@@ -10,6 +10,9 @@ public class Sorcier extends Personnage{
         super(pointsDeVie, niveau, nom, arme);
         this.intelligence = intelligence;
     }
+    public Sorcier(){
+
+    }
 
     public int getIntelligence() {
         return intelligence;

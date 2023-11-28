@@ -13,6 +13,9 @@ public abstract class Personnage  implements Groupe {
     private String nom;
     private Arme arme;
 
+    public Personnage() {
+    }
+
     public Personnage(int pointsDeVie, int niveau, String nom, Arme arme) {
         this.pointsDeVie = pointsDeVie;
         this.niveau = niveau;

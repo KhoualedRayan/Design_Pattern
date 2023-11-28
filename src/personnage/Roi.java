@@ -12,6 +12,9 @@ public class Roi extends Personnage{
         this.force = force;
         this.royaume = royaume;
     }
+    public Roi(){
+
+    }
 
     public int getForce() {
         return force;
