@@ -2,6 +2,8 @@ package personnage;
 
 import arme.Arme;
 import equipe.Groupe;
+import etat.Etat;
+import etat.Reveiller;
 import strategie.Neutre;
 import strategie.StrategieCombat;
 import visiteur.VisiteurPers;
@@ -12,8 +14,11 @@ public abstract class Personnage  implements Groupe {
     private int niveau;
     private String nom;
     private Arme arme;
+    private Etat etat;
 
     public Personnage() {
+        strategieCombat = new Neutre();
+        etat = new Reveiller(this);
     }
 
     public Personnage(int pointsDeVie, int niveau, String nom, Arme arme) {
@@ -22,8 +27,16 @@ public abstract class Personnage  implements Groupe {
         this.nom = nom;
         this.arme = arme;
         strategieCombat = new Neutre();
+        etat = new Reveiller(this);
     }
 
+    public Etat getEtat() {
+        return etat;
+    }
+
+    public void setEtat(Etat etat) {
+        this.etat = etat;
+    }
 
     public int getPointsDeVie() {
         return pointsDeVie;

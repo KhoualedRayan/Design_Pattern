@@ -1,6 +1,10 @@
-package fabrique;
+package tests;
 
 import equipe.Equipe;
+import fabrique.ConstructionGuerisseur;
+import fabrique.ConstructionGuerrier;
+import fabrique.ConstructionRoi;
+import fabrique.ConstructionSorcier;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import outils.Configuration;
