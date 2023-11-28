@@ -44,4 +44,5 @@ public class Roi extends Personnage{
                 ", royaume='" + getRoyaume() + '\'' +
                 '}';
     }
+
 }

@@ -17,8 +17,6 @@ import visiteur.NiveauVisiteur;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ConfigurationTest {
-    private DegatVisiteur degatVisiteur;
-    private NiveauVisiteur niveauVisiteur;
     private BaguetteMagique baguetteMagique;
     private BatonDeSorcier batonDeSorcier;
     private Epee epeeDuRoi;
