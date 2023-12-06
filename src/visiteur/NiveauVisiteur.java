@@ -10,6 +10,7 @@ public class NiveauVisiteur implements VisiteurPers{
     public void visitGuerrier(Guerrier guerrier) {
         guerrier.setNiveau(guerrier.getNiveau()+1);
         guerrier.setPointsDeVie(guerrier.getPointsDeVie()+2);
+        guerrier.setPointsDeVieMax(guerrier.getPointsDeVieMax()+2);
         guerrier.setForce(guerrier.getForce()+2);
     }
 
@@ -17,6 +18,7 @@ public class NiveauVisiteur implements VisiteurPers{
     public void visitRoi(Roi roi) {
         roi.setNiveau(roi.getNiveau()+1);
         roi.setPointsDeVie(roi.getPointsDeVie()+2);
+        roi.setPointsDeVieMax(roi.getPointsDeVieMax()+2);
         roi.setForce(roi.getForce()+1);
     }
 
@@ -24,6 +26,7 @@ public class NiveauVisiteur implements VisiteurPers{
     public void visitSorcier(Sorcier sorcier) {
         sorcier.setNiveau(sorcier.getNiveau()+1);
         sorcier.setPointsDeVie(sorcier.getPointsDeVie()+1);
+        sorcier.setPointsDeVieMax(sorcier.getPointsDeVieMax()+1);
         sorcier.setIntelligence(sorcier.getIntelligence()+2);
     }
 
@@ -31,6 +34,7 @@ public class NiveauVisiteur implements VisiteurPers{
     public void visitGuerisseur(Guerisseur guerisseur) {
         guerisseur.setNiveau(guerisseur.getNiveau()+1);
         guerisseur.setPointsDeVie(guerisseur.getPointsDeVie()+1);
+        guerisseur.setPointsDeVieMax(guerisseur.getPointsDeVieMax()+1);
         guerisseur.setSagesse(guerisseur.getSagesse()+2);
     }
 }

@@ -2,15 +2,10 @@ package tests;
 
 import arme.Epee;
 import etat.Endormi;
-import etat.Etat;
-import fabrique.ConstructionGuerrier;
+import etat.Actif;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import personnage.Guerrier;
-import personnage.Personnage;
-import personnage.Sorcier;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class EndormiTest {
     private Epee epeeDuGuerrier;
@@ -25,7 +20,11 @@ class EndormiTest {
 
     @Test
     void action_Tour() {
-        guerrier.getEtat().action_Tour();
-        System.out.println(endormi.toString());
+        assert(guerrier.getEtat().getClass() == Endormi.class):"Il est pas endormi";
+        guerrier.action();
+        assert(endormi.getTour_Restant()==1):"Bug tah les fous comment ça il dort pas ???";
+        guerrier.action();
+        assert(endormi.getTour_Restant()==0):"Tour pas a 0 ???";
+        assert(guerrier.getEtat().getClass() == Actif.class):"Il s'est pas reveiller";
     }
 }

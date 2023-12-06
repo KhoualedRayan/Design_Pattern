@@ -8,14 +8,16 @@ public class Endormi implements Etat{
 
     public Endormi(Personnage personnage) {
         this.personnage = personnage;
-         tour_Restant = 2;
+        this.personnage.setEtat(this);
+        tour_Restant = 2;
+        this.personnage.setPeutAttaquer(false);
     }
 
     @Override
     public void action_Tour() {
         tour_Restant--;
         if(tour_Restant ==0){
-            this.personnage.setEtat(new Reveiller(personnage));
+            this.personnage.setEtat(new Actif(personnage));
         }
     }
 

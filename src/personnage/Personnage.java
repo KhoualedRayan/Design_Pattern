@@ -2,8 +2,9 @@ package personnage;
 
 import arme.Arme;
 import equipe.Groupe;
+import etat.EnAttaque;
 import etat.Etat;
-import etat.Reveiller;
+import etat.Actif;
 import strategie.Neutre;
 import strategie.StrategieCombat;
 import visiteur.VisiteurPers;
@@ -11,23 +12,37 @@ import visiteur.VisiteurPers;
 public abstract class Personnage  implements Groupe {
     private StrategieCombat strategieCombat;
     private int pointsDeVie;
+    private int pointsDeVieMax;
     private int niveau;
     private String nom;
     private Arme arme;
     private Etat etat;
+    private boolean peutAttaquer;
 
     public Personnage() {
         strategieCombat = new Neutre();
-        etat = new Reveiller(this);
+        etat = new Actif(this);
     }
 
     public Personnage(int pointsDeVie, int niveau, String nom, Arme arme) {
         this.pointsDeVie = pointsDeVie;
+        pointsDeVieMax = pointsDeVie;
         this.niveau = niveau;
         this.nom = nom;
         this.arme = arme;
         strategieCombat = new Neutre();
-        etat = new Reveiller(this);
+        etat = new Actif(this);
+    }
+    public void action(){
+        this.getEtat().action_Tour();
+    }
+
+    public int getPointsDeVieMax() {
+        return pointsDeVieMax;
+    }
+
+    public void setPointsDeVieMax(int pointsDeVieMax) {
+        this.pointsDeVieMax = pointsDeVieMax;
     }
 
     public Etat getEtat() {
@@ -70,7 +85,10 @@ public abstract class Personnage  implements Groupe {
         this.arme = arme;
     }
     public void attaquer(Personnage personnage){
-        strategieCombat.attaquer(this.getArme().getDegat(),personnage);
+        if(peutAttaquer) {
+            this.setEtat(new EnAttaque(this));
+            strategieCombat.attaquer(this.getArme().getDegat(), personnage);
+        }
     }
     public void subir(int degat){
         strategieCombat.subir(degat,this);
@@ -81,6 +99,14 @@ public abstract class Personnage  implements Groupe {
 
     public void setStrategieCombat(StrategieCombat strategieCombat) {
         this.strategieCombat = strategieCombat;
+    }
+
+    public void setPeutAttaquer(boolean peutAttaquer) {
+        this.peutAttaquer = peutAttaquer;
+    }
+
+    public boolean isPeutAttaquer() {
+        return peutAttaquer;
     }
 
     public abstract String toString();

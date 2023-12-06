@@ -13,6 +13,14 @@ public class Guerisseur extends Personnage{
 
     public Guerisseur() {
     }
+    public void soinPersonnage(Personnage p){
+        if(isPeutAttaquer()){
+            if(p.getPointsDeVie()+sagesse >= p.getPointsDeVieMax())
+                p.setPointsDeVie(p.getPointsDeVieMax());
+            else
+                p.setPointsDeVie(p.getPointsDeVie()+sagesse);
+        }
+    }
 
     public int getSagesse() {
         return sagesse;
