@@ -1,6 +1,7 @@
 package personnage;
 
 import arme.Arme;
+import arme.BaguetteMagique;
 import visiteur.VisiteurPers;
 
 public class Guerisseur extends Personnage{
@@ -12,6 +13,13 @@ public class Guerisseur extends Personnage{
     }
 
     public Guerisseur() {
+        setPointsDeVieMax(5);
+        setSagesse(5);
+        setPointsDeVie(5);
+        setNiveau(1);
+        Arme arme = new BaguetteMagique(1,"BaguetteMagique",1.0,2);
+        setArme(arme);
+
     }
     public void soinPersonnage(Personnage p){
         if(isPeutAttaquer()){

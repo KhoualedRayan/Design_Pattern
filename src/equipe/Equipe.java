@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Equipe implements Groupe{
+    private String nomEquipe;
     private ArrayList<Groupe> groupes;
 
     public Equipe() {
@@ -18,6 +19,14 @@ public class Equipe implements Groupe{
         for(Groupe g : groupes){
             g.accept(vp);
         }
+    }
+
+    public String getNomEquipe() {
+        return nomEquipe;
+    }
+
+    public void setNomEquipe(String nomEquipe) {
+        this.nomEquipe = nomEquipe;
     }
 
     public ArrayList<Groupe> getGroupes() {
@@ -39,7 +48,8 @@ public class Equipe implements Groupe{
     @Override
     public String toString() {
         return "Equipe{" +
-                "groupes=" + groupes +
+                "nomEquipe='" + nomEquipe + '\'' +
+                ", groupes=" + groupes +
                 '}';
     }
 }

@@ -1,6 +1,8 @@
 package personnage;
 
 import arme.Arme;
+import arme.BaguetteMagique;
+import arme.Epee;
 import visiteur.VisiteurPers;
 
 public class Guerrier extends Personnage {
@@ -11,7 +13,12 @@ public class Guerrier extends Personnage {
         this.force = force;
     }
     public Guerrier(){
-
+        setPointsDeVieMax(8);
+        setForce(5);
+        setPointsDeVie(8);
+        setNiveau(1);
+        Arme arme = new Epee(4,"EpeeGuerrier",2.0,2);
+        setArme(arme);
     }
 
     public int getForce() {

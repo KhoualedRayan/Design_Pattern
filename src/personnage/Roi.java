@@ -1,6 +1,7 @@
 package personnage;
 
 import arme.Arme;
+import arme.Epee;
 import visiteur.VisiteurPers;
 
 public class Roi extends Personnage{
@@ -13,7 +14,12 @@ public class Roi extends Personnage{
         this.royaume = royaume;
     }
     public Roi(){
-
+        setPointsDeVieMax(7);
+        setForce(4);
+        setPointsDeVie(7);
+        setNiveau(1);
+        Arme arme = new Epee(2,"EpeeRoi",1.5,2);
+        setArme(arme);
     }
 
     public int getForce() {

@@ -19,6 +19,7 @@ public abstract class Personnage  implements Groupe {
     private Etat etat;
     private boolean peutAttaquer;
 
+
     public Personnage() {
         strategieCombat = new Neutre();
         etat = new Actif(this);
@@ -85,10 +86,15 @@ public abstract class Personnage  implements Groupe {
         this.arme = arme;
     }
     public void attaquer(Personnage personnage){
+        if(this.getPointsDeVie()<1)
+            peutAttaquer =false;
         if(peutAttaquer) {
-            this.setEtat(new EnAttaque(this));
             strategieCombat.attaquer(this.getArme().getDegat(), personnage);
         }
+        else {
+            System.out.println(this.getNom() + " ne peut pas attaquer !");
+        }
+        this.action();
     }
     public void subir(int degat){
         strategieCombat.subir(degat,this);

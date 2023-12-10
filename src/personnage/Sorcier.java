@@ -1,6 +1,12 @@
 package personnage;
 
 import arme.Arme;
+import arme.BatonDeSorcier;
+import arme.Epee;
+import etat.Actif;
+import etat.Blesse;
+import etat.Endormi;
+import etat.Etat;
 import visiteur.VisiteurPers;
 
 public class Sorcier extends Personnage{
@@ -11,7 +17,26 @@ public class Sorcier extends Personnage{
         this.intelligence = intelligence;
     }
     public Sorcier(){
-
+        setPointsDeVieMax(4);
+        setIntelligence(5);
+        setPointsDeVie(4);
+        setNiveau(1);
+        Arme arme = new BatonDeSorcier(3,"BatonSorcier",2.0,"Dodo");
+        setArme(arme);
+    }
+    public void sort(Personnage personnage){
+        BatonDeSorcier batonDeSorcier= (BatonDeSorcier) this.getArme();
+        switch (batonDeSorcier.getPouvoir()){
+            case "Dodo":
+                personnage.setEtat(new Endormi(personnage));
+                break;
+            case "Blessure":
+                personnage.setEtat(new Blesse(personnage));
+                break;
+            case "Purge":
+                personnage.setEtat(new Actif(personnage));
+                break;
+        }
     }
 
     public int getIntelligence() {

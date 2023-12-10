@@ -10,7 +10,7 @@ public class Neutre implements StrategieCombat{
 
     @Override
     public void subir(int degat, Personnage personnage) {
-        personnage.setPointsDeVie(personnage.getPointsDeVie() - degat);
+        personnage.setPointsDeVie(Math.max(personnage.getPointsDeVie() - degat, 0));
     }
 
 }

@@ -11,6 +11,6 @@ public class Defensive implements StrategieCombat
 
     @Override
     public void subir(int degat, Personnage personnage) {
-        personnage.setPointsDeVie((int) (personnage.getPointsDeVie() - degat *0.5));
+        personnage.setPointsDeVie(Math.max((int)(personnage.getPointsDeVie() - degat*0.5), 0));
     }
 }

@@ -10,7 +10,7 @@ public class Agressive implements StrategieCombat{
 
     @Override
     public void subir(int degat, Personnage personnage) {
-        personnage.setPointsDeVie((int) (personnage.getPointsDeVie() - degat *2));
+        personnage.setPointsDeVie(Math.max(personnage.getPointsDeVie() - degat*2, 0));
     }
 
 }
