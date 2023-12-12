@@ -33,19 +33,17 @@ public class Blesse implements Etat{
         this.personnage = personnage;
     }
 
-    public int getDegat() {
-        return degat;
-    }
-
-    public void setDegat(int degat) {
-        this.degat = degat;
-    }
 
     public int getTour_restant() {
         return tour_restant;
     }
 
-    public void setTour_restant(int tour_restant) {
-        this.tour_restant = tour_restant;
+    @Override
+    public String toString() {
+        return "Blesse{" +
+                "personnage=" + personnage +
+                ", degat=" + degat +
+                ", tour_restant=" + tour_restant +
+                '}';
     }
 }

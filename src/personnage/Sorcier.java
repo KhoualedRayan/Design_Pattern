@@ -21,7 +21,7 @@ public class Sorcier extends Personnage{
         setIntelligence(5);
         setPointsDeVie(4);
         setNiveau(1);
-        Arme arme = new BatonDeSorcier(3,"BatonSorcier",2.0,"Dodo");
+        Arme arme = new BatonDeSorcier(3,"BatonSorcier",2.0,"Blessure");
         setArme(arme);
     }
     public void sort(Personnage personnage){
