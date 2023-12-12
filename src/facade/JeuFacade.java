@@ -100,6 +100,11 @@ public class JeuFacade {
         command.execute();
         commandsHistory.add(command);
     }
+    public void changementStrategie(){
+        Command command = new ChangementStrategieCombatCommand(this);
+        command.execute();
+        commandsHistory.add(command);
+    }
     public void undo(){
         if(!commandsHistory.isEmpty()){
             Command derniereCommande = commandsHistory.remove(commandsHistory.size()-1);

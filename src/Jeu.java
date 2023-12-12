@@ -16,7 +16,7 @@ public class Jeu {
             System.out.println("\nVeuillez saisir votre prochaine action.");
             System.out.println("0-Quitter 1-Créer un personnage 2-Supprimer un personnage 3-Créer une équipe 4-Supprimer une équipe");
             System.out.println("5-Ajouter un membre dans une équipe 6-Supprimer un membre d'une équipe 7-Améliorer une équipe 8-Attaquer un personnage");
-            System.out.println("9-Soigner un personnage 10-Lancer un sort 11-Défaire la dernière action 12-Refaire la dernière action\n");
+            System.out.println("9-Soigner un personnage 10-Lancer un sort 11-Changer de stratégie de combat 12-Défaire la dernière action 13-Refaire la dernière action\n");
             action = scanner.nextLine();
             switch (action){
                 case "0":
@@ -53,9 +53,12 @@ public class Jeu {
                     jeuFacade.sort();
                     break;
                 case "11":
-                    jeuFacade.undo();
+                    jeuFacade.changementStrategie();
                     break;
                 case "12":
+                    jeuFacade.undo();
+                    break;
+                case "13":
                     jeuFacade.redo();
                     break;
             }

@@ -13,4 +13,8 @@ public class Neutre implements StrategieCombat{
         personnage.setPointsDeVie(Math.max(personnage.getPointsDeVie() - degat, 0));
     }
 
+    @Override
+    public String toString() {
+        return "Neutre";
+    }
 }

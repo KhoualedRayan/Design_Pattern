@@ -13,4 +13,8 @@ public class Agressive implements StrategieCombat{
         personnage.setPointsDeVie(Math.max(personnage.getPointsDeVie() - degat*2, 0));
     }
 
+    @Override
+    public String toString() {
+        return "Agressive";
+    }
 }
