@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TP1_CPOA.iml" filepath="$PROJECT_DIR$/TP1_CPOA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TP_DesignPattern_CPOA.iml" filepath="$PROJECT_DIR$/TP_DesignPattern_CPOA.iml" />
     </modules>
   </component>
 </project>
